@@ -1,0 +1,7 @@
+<!--USE THIS {% include 'buttons/auth_button.html' %} IN YOUR TEMPLATE-->
+
+{% if user.is_authenticated %}
+    <button onclick="window.location.href='http://localhost:8000/accounts/logout'">Logout</button>
+{% else %}
+    <button onclick="window.location.href='http://localhost:8000/accounts/login'">Login</button>
+{% endif %}

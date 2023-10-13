@@ -1,0 +1,5 @@
+username: student_api_user
+
+email: jofeleonids00@gmail.com
+
+password: 8743CXR86TFG76hj

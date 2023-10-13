@@ -1,0 +1,7 @@
+copy project with (django-admin startproject --template=<copy_from_this_project> <new_project_name>)
+move to other directory
+create venv with (python -m venv venv)
+active venv with (venv/scripts/activate)
+move/copy requirements.txt near file venv and setup plugins with (pip install -r requirements.txt)
+make migration with (py manage.py migrate)
+create admin user with (python manage.py createsuperuser) use (file admin_key)

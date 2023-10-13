@@ -1,0 +1,15 @@
+main {
+    display: flex;
+    justify-content: center;
+};
+
+h1 {
+    text-align: center;
+    color: green;
+};
+
+main.btn {
+    padding: 5px;
+    border-radius: 60px;
+    border: 4px solid green;
+};

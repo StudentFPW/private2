@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+{% load custom_filters %}
+
+{% block title %}
+    USERS
+{% endblock title %}
+
+{% block content %}
+    {% for i in user %}
+
+        {% for b in i.books %}
+            <h3>{{ b|words }}</h3>
+        {% endfor %}
+
+        <h1>{{ i.author.name }}</h1>
+
+    {% endfor %}
+{% endblock content %}

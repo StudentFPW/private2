@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+
+{% load i18n %}
+
+{% block title %}
+    {% trans "Kid name" %}
+{% endblock title %}
+
+{% block content %}
+
+    <form action="{% url 'set_language' %}" method="POST">
+
+        {% csrf_token %}
+
+        <input type="hidden" name="next" value="{{ redirect_to }}">
+
+        {% get_current_language as LANGUAGE_CODE %}
+
+        <select name="language" id="">
+
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+
+            {% for language in languages %}
+                <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                    {{ language.name_local }} - {{ language.code }}
+                </option>
+            {% endfor %}
+
+        </select>
+
+        <input type="submit" value="set">
+
+    </form>
+
+    {% if name %}
+        {% for data in name %}
+            <tr>
+                <td>{{ data.name }}</td>
+                <td>{{ data.kind.name }}</td>
+            </tr>
+        {% endfor %}
+    {% else %}
+        <h1>Empty</h1>
+    {% endif %}
+
+{% endblock content %}

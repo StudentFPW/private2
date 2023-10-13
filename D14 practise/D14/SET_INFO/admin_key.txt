@@ -1,0 +1,4 @@
+# python manage.py createsuperuser
+
+# login: admin
+# password: admin12345
